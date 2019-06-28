@@ -147,7 +147,7 @@ function* scan(manager: BleManager): Generator<*, *, *> {
           emit([error, scannedDevice])
           return
         }
-        if (scannedDevice != null && scannedDevice.localName == "SensorTag") {
+        if (scannedDevice != null && (scannedDevice.localName == "SensorTag" || scannedDevice.localName == "CC2650 SensorTag" )) {
           emit([error, scannedDevice])
         }
       }
